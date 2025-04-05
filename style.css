@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #222;
+    color: #fff;
+}
+
+.card {
+    width: 90%;
+    max-width: 470px;
+    background: linear-gradient(135deg, #00feba, #5b548a);
+    color: #fff;
+    margin: 100px auto 0;
+    border-radius: 20px;
+    padding: 40px 35px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card.weather-night {
+    background: linear-gradient(135deg, #222, #3a3a3a);
+}
+
+.search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search input {
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    color: #555;
+    padding: 10px 25px;
+    height: 60px;
+    border-radius: 30px;
+    flex: 1;
+    margin-right: 16px;
+    font-size: 18px;
+}
+
+.search button {
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+.search button:hover{
+    background-color:beige;
+}
+.search button:active{
+    opacity:0.7;
+}
+
+.search button img {
+    width: 20px;
+}
+
+.weather-icon {
+    width: 150px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.weather h1 {
+    font-size: 80px;
+    font-weight: 500;
+    margin-top:10px;
+}
+
+.weather h2 {
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+.weather-type {
+    font-size: 25px; 
+    margin-top: -5px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    margin-left:-10px;
+}
+
+.details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 50px;
+}
+
+.col {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.col img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.humidity, .wind {
+    font-size: 28px;
+    margin-top: -6px;
+}
+
+.weather {
+    display: none;
+}
+
+.error {
+    text-align: left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+    color: #ff6b6b;
+}
+
+.watch-link {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    background-color: #5b548a;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.watch-link:hover {
+    background-color: #00feba;
+}
+
+.loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #00feba;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+@media (max-width: 600px) {
+    .card {
+        width: 90%;
+        margin-top: 50px;
+        padding: 30px 25px;
+    }
+
+    .weather h1 {
+        font-size: 60px;
+    }
+
+    .weather h2 {
+        font-size: 30px;
+    }
+
+    .details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .col {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .col img {
+        margin-bottom: 10px;
+    }
+
+    .watch-link {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+}
+
+
+.card.weather-night {
+    background: linear-gradient(135deg, #222, #3a3a3a);
+}
+
+.card.weather-night .weather-icon {
+    opacity: 0.8;
+}
+
+.card.weather-night .search input {
+    background: #333;
+    color: #ddd;
+}
+
+.card.weather-night .search button {
+    background: #333;
+}
+.card.weather-night .search button:hover{
+    background-color:lightgray;
+}
+.card.weather-night .search button:active{
+    opacity:0.5px;
+}
+
+.card.weather-night .weather {
+    color: #ddd;
+}
+
+.card.weather-night .details {
+    background: #444;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.card.weather-night .details .col {
+    color: #ddd;
+}
+
+.card.weather-night .details .col img {
+    filter: brightness(0.7);
+}
